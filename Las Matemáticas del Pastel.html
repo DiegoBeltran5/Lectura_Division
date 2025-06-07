@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Las Matemáticas del Reparto de Pasteles</title>
+    <style>
+        @page {
+            margin: 2cm;
+            size: A4;
+        }
+        
+        body {
+            font-family: 'Comic Sans MS', 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: white;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            font-size: 14pt;
+        }
+        
+        .header {
+            text-align: center;
+            border-bottom: 4px solid #e74c3c;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+            background: linear-gradient(135deg, #ffeaa7, #fab1a0);
+            border-radius: 15px;
+            padding: 30px;
+        }
+        
+        h1 {
+            color: #2d3436;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-align: center;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .subtitle {
+            color: #636e72;
+            font-size: 1.3em;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        .author-info {
+            text-align: center;
+            color: #74b9ff;
+            font-size: 1em;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+        
+        h2 {
+            color: #e17055;
+            font-size: 1.6em;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            border-left: 6px solid #fd79a8;
+            padding-left: 15px;
+            background-color: #ffeaa7;
+            padding: 10px 15px;
+            border-radius: 10px;
+        }
+        
+        h3 {
+            color: #00b894;
+            font-size: 1.3em;
+            margin-top: 25px;
+            margin-bottom: 12px;
+        }
+        
+        p {
+            text-align: justify;
+            margin-bottom: 15px;
+            font-size: 13pt;
+        }
+        
+        .highlight-box {
+            background: linear-gradient(135deg, #a29bfe, #fd79a8);
+            color: white;
+            border-radius: 15px;
+            padding: 20px;
+            margin: 20px 0;
+            font-weight: bold;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        
+        .algorithm-box {
+            background: linear-gradient(135deg, #55efc4, #81ecec);
+            border: 3px solid #00b894;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        .example {
+            background: linear-gradient(135deg, #ffeaa7, #fdcb6e);
+            border-left: 6px solid #e17055;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 15px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+        }
+        
+        .questions-section {
+            background: linear-gradient(135deg, #fd79a8, #fdcb6e);
+            color: white;
+            border-radius: 20px;
+            padding: 30px;
+            margin: 40px 0;
+            box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+        }
+        
+        .question {
+            background: rgba(255,255,255,0.9);
+            color: #2d3436;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 10px;
+            font-weight: bold;
+            border-left: 5px solid #e17055;
+        }
+        
+        .footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 3px solid #74b9ff;
+            text-align: center;
+            color: #636e72;
+            font-size: 0.9em;
+            background-color: #ddd6fe;
+            padding: 20px;
+            border-radius: 15px;
+        }
+        
+        .print-button {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: linear-gradient(135deg, #74b9ff, #0984e3);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: bold;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            transition: all 0.3s;
+        }
+        
+        .print-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+        }
+        
+        .cake-emoji {
+            font-size: 2em;
+            margin: 0 10px;
+        }
+        
+        @media print {
+            .print-button {
+                display: none;
+            }
+            
+            body {
+                font-size: 11pt;
+                line-height: 1.4;
+            }
+            
+            h1 {
+                font-size: 20pt;
+            }
+            
+            h2 {
+                font-size: 14pt;
+            }
+            
+            h3 {
+                font-size: 12pt;
+            }
+        }
+    </style>
+</head>
+<body>
+    <button class="print-button" onclick="window.print()">🖨️ Imprimir PDF</button>
+    
+    <div class="header">
+        <h1>🎂 Las Matemáticas del Reparto de Pasteles 🎂</h1>
+        <div class="subtitle">¡Aprende a compartir de forma justa!</div>
+        <div class="author-info">Adaptado del artículo original de Science News Explores</div>
+    </div>
+
+    <div class="highlight-box">
+        <strong>¿Sabías que...?</strong> Cuando compartes un pastel, estás usando matemáticas muy importantes. ¡Es como un juego donde todos deben ganar!
+    </div>
+
+    <p>Había una vez un señor llamado Ariel que tenía tres hijos. En su casa siempre había fiestas de cumpleaños con pasteles deliciosos. Pero Ariel notó algo: ¡siempre había peleas porque alguien pensaba que otro niño tenía un pedazo más grande!</p>
+
+    <p>Ariel era muy inteligente y trabajaba con computadoras. Un día pensó: "Debe haber una forma matemática de cortar pasteles para que todos estén felices". Y así comenzó a estudiar el problema más dulce de las matemáticas.</p>
+
+    <h2>¿Por qué es importante compartir bien?</h2>
+
+    <p>Imagínate que no solo tienes que compartir pasteles. También podrías necesitar compartir:</p>
+    <p>• 🏠 Un cuarto con tu hermano</p>
+    <p>• ⏰ Tiempo para jugar videojuegos</p>
+    <p>• 🍕 Una pizza con tus amigos</p>
+    <p>• 🎨 Colores para dibujar</p>
+
+    <div class="example">
+        <strong>💡 Dato curioso:</strong> Los matemáticos usan pasteles para representar cualquier cosa que se puede dividir. ¡Es más fácil pensar en pasteles que en tierras o dinero!
+    </div>
+
+    <h2>🔪 Las reglas mágicas para cortar pasteles</h2>
+
+    <p>Los matemáticos (que son como detectives de los números) han inventado varias formas de cortar pasteles. ¡Vamos a conocerlas!</p>
+
+    <h3>Regla #1: "Yo corto, tú eliges"</h3>
+
+    <div class="algorithm-box">
+        <h3>Para 2 personas:</h3>
+        <p><strong>Paso 1:</strong> Alicia corta el pastel en dos pedazos que ella piensa que son iguales.</p>
+        <p><strong>Paso 2:</strong> Bob elige el pedazo que más le gusta.</p>
+        <p><strong>Resultado:</strong> ¡Los dos están contentos! Alicia sabía que los pedazos eran iguales, y Bob eligió el que prefería.</p>
+    </div>
+
+    <p>Esta regla es súper antigua. ¡Los antiguos griegos ya la usaban hace miles de años!</p>
+
+    <h2>¿Y si somos más de dos?</h2>
+
+    <p>Aquí es donde se pone divertido. Cuando hay tres o más personas, las cosas se complican. Es como un rompecabezas matemático.</p>
+
+    <div class="highlight-box">
+        <strong>Pensemos juntos:</strong> Si somos 3 personas, cada una debería recibir 1/3 del pastel. Si somos 4, cada una debería recibir 1/4. ¡Es como dividir entre amigos!
+    </div>
+
+    <h3>Regla #2: "El método del jefe"</h3>
+
+    <p>Un matemático llamado Hugo inventó esta regla cuando había una guerra y las personas peleaban por la tierra. Él quería encontrar una forma justa de dividir las cosas.</p>
+
+    <div class="algorithm-box">
+        <h3>Para 3 personas:</h3>
+        <p><strong>Paso 1:</strong> Alicia (la jefe) corta el pastel en 3 pedazos que ella piensa que son iguales.</p>
+        <p><strong>Paso 2:</strong> Bob dice cuáles pedazos le gustan.</p>
+        <p><strong>Paso 3:</strong> Carla elige primero cualquier pedazo.</p>
+        <p><strong>Paso 4:</strong> Bob elige uno de los pedazos que le gustaban.</p>
+        <p><strong>Paso 5:</strong> Alicia se queda con el último.</p>
+    </div>
+
+    <h3>Regla #3: "El método de recortar"</h3>
+
+    <div class="algorithm-box">
+        <h3>Para muchas personas:</h3>
+        <p><strong>Paso 1:</strong> La primera persona corta un pedazo que cree que es justo.</p>
+        <p><strong>Paso 2:</strong> Cada persona puede dejarlo igual o hacer el pedazo más pequeño si piensa que está muy grande.</p>
+        <p><strong>Paso 3:</strong> La última persona que lo hizo más pequeño se queda con ese pedazo.</p>
+        <p><strong>Paso 4:</strong> Se repite con las personas que quedan.</p>
+    </div>
+
+    <h2>😤 El problema de la envidia</h2>
+
+    <p>A veces, aunque tu pedazo sea justo, puedes ver el pedazo de otra persona y pensar: "¡Oye, yo quiero ese!" Esto se llama envidia, y los matemáticos también trataron de resolverlo.</p>
+
+    <div class="example">
+        <strong>🍰 Ejemplo:</strong> Imagina que el pastel tiene una cereza en la parte de arriba. Si a ti te encantan las cerezas, preferirías un pedazo pequeño con cereza que uno grande sin cereza. ¡Cada persona valora las cosas de forma diferente!
+    </div>
+
+    <h3>Regla #4: "El método sin envidia" (Conway-Selfridge)</h3>
+
+    <p>En los años 1960, dos matemáticos llamados John Conway y John Selfridge inventaron un método especial para que 3 personas pudieran dividir un pastel sin que nadie sintiera envidia.</p>
+
+    <div class="algorithm-box">
+        <h3>Para 3 personas sin envidia:</h3>
+        <p><strong>Paso 1:</strong> Alicia corta el pastel en 3 pedazos que ella piensa que valen lo mismo.</p>
+        <p><strong>Paso 2:</strong> Bob puede recortar UN pedazo (solo uno) para hacer que dos pedazos estén empatados como los más valiosos. Los recortes se guardan aparte.</p>
+        <p><strong>Paso 3:</strong> Carla elige primero cualquier pedazo que quiera.</p>
+        <p><strong>Paso 4:</strong> Si Carla NO eligió el pedazo recortado, entonces Bob se queda con ese pedazo. Si Carla SÍ eligió el recortado, Bob elige entre los dos que quedan.</p>
+        <p><strong>Paso 5:</strong> Alicia se queda con el último pedazo.</p>
+        <p><strong>Paso 6:</strong> Ahora dividen los recortes siguiendo el mismo proceso.</p>
+        <p><strong>Resultado:</strong> ¡Nadie siente envidia del pedazo de los demás!</p>
+    </div>
+
+    <p>Este método fue un gran avance porque resolvió el problema de la envidia, al menos para 3 personas. Más tarde, otros matemáticos encontraron formas de hacerlo funcionar para más personas, ¡pero podía requerir millones de cortes!</p>
+
+    <h2>😈 ¿Y si alguien hace trampa?</h2>
+
+    <p>Los matemáticos también pensaron: "¿Qué pasa si alguien miente sobre lo que realmente quiere para obtener más pastel?"</p>
+
+    <p>Después de muchos años estudiando, descubrieron algo triste: ¡Es imposible crear un método que sea perfecto cuando las personas pueden mentir! Siempre habrá alguien que pueda hacer trampa.</p>
+
+    <h2>🌍 ¿Dónde más se usa esto?</h2>
+
+    <p>Estas ideas matemáticas no solo sirven para pasteles. También se usan para:</p>
+
+    <p><strong>🏫 Elegir escuelas:</strong> Decidir qué estudiantes van a qué escuelas de forma justa.</p>
+
+    <p><strong>🗳️ Votaciones:</strong> Crear sistemas de votación más justos.</p>
+
+    <p><strong>🏠 Dividir gastos:</strong> Ayudar a compañeros de cuarto a dividir el alquiler de forma justa.</p>
+
+    <p><strong>💔 Divorcios:</strong> Ayudar a las personas a dividir sus cosas cuando se separan.</p>
+
+    <h2>La conclusión del pastel</h2>
+
+    <div class="highlight-box">
+        Después de más de 75 años estudiando este problema, los matemáticos siguen descubriendo cosas nuevas. ¡No hay una solución perfecta para todos los casos!
+    </div>
+
+    <p>Lo más bonito de todo esto es que un problema tan simple como "¿cómo corto un pastel?" nos llevó a descubrir matemáticas súper complicadas y útiles.</p>
+
+    <p>La próxima vez que tengas que compartir algo con tus amigos o hermanos, ¡ya sabes que estás haciendo matemáticas avanzadas!</p>
+
+    <div class="questions-section">
+        <h2 style="color: black; margin-top: 0;">🧠 ¡Vamos a pensar! 🧠</h2>
+        
+        <div class="question">
+            <strong>Pregunta 1:</strong> Si tienes que compartir una pizza con 2 amigos más (o sea, 3 personas en total), ¿qué fracción de la pizza le tocaría a cada uno? ¿Cómo lo sabes?
+        </div>
+        
+        <div class="question">
+            <strong>Pregunta 2:</strong> Imagina que estás compartiendo un pastel de chocolate con fresas encima con tu hermano. A ti te encantan las fresas, pero a tu hermano no le gustan nada. ¿Cómo podrías usar esto a tu favor para que los dos estén más contentos con sus pedazos?
+        </div>
+        
+        <div class="question">
+            <strong>Pregunta 3:</strong> ¿Por qué crees que compartir algo puede ser complicado cuando hay varias personas? ¿Se te ocurre algún ejemplo de tu vida donde hayas visto este problema?
+        </div>
+
+	<div class="question">
+            <strong>Pregunta 4:</strong> ¿Cómo puedes usar las matemáticas para asegurarte de que cada persona reciba una parte igual al dividir algo?
+        </div>
+
+	<div class="question">
+            <strong>Pregunta 5:</strong> ¿Qué significa “justicia” en el reparto según el texto, y por qué es importante pensar en eso cuando compartimos?
+        </div>
+
+	<div class="question">
+            <strong>Pregunta 6:</strong> ¿Cómo crees que lo que aprendiste en el artículo puede ayudarte a resolver problemas en tu vida diaria, no solo con pasteles?
+        </div>
+    </div>
+
+    <div class="footer">
+        <p><strong>🎂 Fuente:</strong> Adaptado de "Cake-cutting math offers lessons that go far beyond dessert plates" - Science News Explores</p>
+        <p><strong>✏️ Adaptación:</strong> Versión simplificada para lectores jóvenes</p>
+    </div>
+</body>
+</html>
